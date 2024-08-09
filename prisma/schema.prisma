@@ -14,8 +14,8 @@ datasource db {
 }
 
 enum UserStatus {
-  Active
-  Inactive
+  ACTIVE
+  INACTIVE
 }
 model User {
   id BigInt @id @default(autoincrement())
@@ -24,7 +24,7 @@ model User {
   email String @unique
   password String
   profile Profile?
-  status UserStatus @default(Active)
+  status UserStatus @default(ACTIVE)
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
 }
